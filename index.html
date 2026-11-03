@@ -151,8 +151,21 @@
   footer{padding:36px 0;text-align:center;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
 
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '893218283798963');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel -->
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></noscript>
 
 <!-- ======================================================
      LINK DE CHECKOUT (Hotmart): cámbialo solo aquí abajo
@@ -450,6 +463,62 @@
     if (a.getAttribute('href') === '#') { a.href = CHECKOUT; a.rel = 'noopener'; }
   });
   document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+<!-- Rastreamento de anúncios: repassa xcod e UTMs para o checkout da Hotmart -->
+<script>
+(function () {
+  // xcod válido = só dígitos (o {{ad.id}} da Meta)
+  var VALID = /^\d{5,25}$/;
+  var KEY = "xcod_ad";
+  var DAYS = 7;
+  var UTMS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+
+  var params = new URLSearchParams(window.location.search);
+  var xcod = params.get("xcod");
+  if (!xcod || !VALID.test(xcod)) {
+    var content = params.get("utm_content");
+    xcod = content && VALID.test(content) ? content : null;
+  }
+
+  // Guarda o último anúncio clicado, para quem volta à página depois
+  try {
+    if (xcod) {
+      localStorage.setItem(KEY, JSON.stringify({ v: xcod, t: Date.now() }));
+    } else {
+      var saved = JSON.parse(localStorage.getItem(KEY) || "null");
+      if (saved && VALID.test(saved.v) && Date.now() - saved.t < DAYS * 864e5) {
+        xcod = saved.v;
+      }
+    }
+  } catch (e) {}
+
+  function decorate(a) {
+    if (!a || !a.href || a.href.indexOf("hotmart.com") === -1) return;
+    try {
+      var url = new URL(a.href);
+      if (xcod) url.searchParams.set("xcod", xcod);
+      UTMS.forEach(function (k) {
+        var v = params.get(k);
+        if (v && !url.searchParams.get(k)) url.searchParams.set(k, v);
+      });
+      a.href = url.toString();
+    } catch (e) {}
+  }
+
+  function decorateAll() {
+    document.querySelectorAll('a[href*="hotmart.com"]').forEach(decorate);
+  }
+
+  // Na carga da página e de novo no clique (pega botões de popup e os que surgem depois)
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", decorateAll);
+  } else {
+    decorateAll();
+  }
+  document.addEventListener("click", function (e) {
+    decorate(e.target.closest && e.target.closest("a"));
+  }, true);
+})();
 </script>
 </body>
 </html>
