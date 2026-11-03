@@ -15,7 +15,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
 <link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="images/hero-sm.webp" as="image" type="image/webp" imagesrcset="images/hero-sm.webp 640w, images/hero.webp 1024w" imagesizes="(min-width:860px) 500px, calc(100vw - 40px)" fetchpriority="high">
+<link rel="preload" href="images/hero-sm.webp" as="image" type="image/webp" imagesrcset="images/hero-sm.webp 640w, images/hero-md.webp 800w, images/hero.webp 1024w" imagesizes="(min-width:860px) 500px, calc(100vw - 40px)" fetchpriority="high">
 <style>
   @font-face{font-family:"DM Sans";src:url(fonts/dm-sans.woff2) format("woff2");font-weight:100 1000;font-style:normal;font-display:swap;
     unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -164,8 +164,12 @@
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-var go=function(){s.parentNode.insertBefore(t,s)};
-if(b.readyState==='complete'){setTimeout(go,0)}else{f.addEventListener('load',function(){setTimeout(go,0)})}}(window,
+// el código de la Meta se carga cuando la persona interactúa (o tras 3,5 s), para no frenar la carga
+var done=0,ev=['scroll','touchstart','pointerdown','mousemove','keydown'],
+go=function(){if(done)return;done=1;ev.forEach(function(x){f.removeEventListener(x,go,{passive:!0})});s.parentNode.insertBefore(t,s)};
+ev.forEach(function(x){f.addEventListener(x,go,{passive:!0})});
+var later=function(){setTimeout(go,3500)};
+if(b.readyState==='complete'){later()}else{f.addEventListener('load',later)}}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '893218283798963');
 fbq('track', 'PageView');
@@ -197,7 +201,7 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
       </div>
     </div>
     <div class="hero-img">
-      <img src="images/hero-sm.webp" srcset="images/hero-sm.webp 640w, images/hero.webp 1024w" sizes="(min-width:860px) 500px, calc(100vw - 40px)"
+      <img src="images/hero-sm.webp" srcset="images/hero-sm.webp 640w, images/hero-md.webp 800w, images/hero.webp 1024w" sizes="(min-width:860px) 500px, calc(100vw - 40px)"
            alt="Mariana con las muñecas de tela que enseña a crear en el curso" width="1024" height="827" fetchpriority="high">
     </div>
   </div>
