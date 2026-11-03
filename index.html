@@ -13,10 +13,17 @@
 <link rel="canonical" href="https://www.munecasdetela.site/">
 <meta name="theme-color" content="#FDFBF8">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="images/hero-sm.webp" as="image" type="image/webp" imagesrcset="images/hero-sm.webp 640w, images/hero.webp 1024w" imagesizes="(min-width:860px) 500px, calc(100vw - 40px)" fetchpriority="high">
 <style>
+  @font-face{font-family:"DM Sans";src:url(fonts/dm-sans.woff2) format("woff2");font-weight:100 1000;font-style:normal;font-display:swap;
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:Fraunces;src:url(fonts/fraunces.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap;
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  /* fuentes de respaldo con medidas parecidas: evitan que el texto "salte" al cargar */
+  @font-face{font-family:"Fraunces Fallback";src:local("Georgia");size-adjust:94%}
+  @font-face{font-family:"DM Sans Fallback";src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("Helvetica");size-adjust:103%}
   :root{
     --cream:#FDFBF8; --paper:#F6EFE6; --ink:#172B2D; --muted:#55615F;
     --green:#3F8A58; --green-d:#2F6E45; --gold:#C58A16; --rose:#E9C9C1; --line:#E7DED2;
@@ -24,9 +31,9 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--cream);color:var(--ink);font:17px/1.6 "DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body{background:var(--cream);color:var(--ink);font:17px/1.6 "DM Sans","DM Sans Fallback",Arial,sans-serif;-webkit-font-smoothing:antialiased}
   img{max-width:100%;height:auto;display:block}
-  h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;font-weight:700;letter-spacing:-.01em}
+  h1,h2,h3{font-family:Fraunces,"Fraunces Fallback",Georgia,serif;line-height:1.15;font-weight:700;letter-spacing:-.01em}
   h1{font-size:clamp(2rem,5.5vw,3.4rem)}
   h2{font-size:clamp(1.65rem,4vw,2.5rem);margin-bottom:.6em}
   h3{font-size:1.2rem}
@@ -74,7 +81,7 @@
 
   .stat{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:28px}
   .stat div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 22px;min-width:150px}
-  .stat b{display:block;font-family:Fraunces,serif;font-size:1.9rem;color:var(--green)}
+  .stat b{display:block;font-family:Fraunces,"Fraunces Fallback",Georgia,serif;font-size:1.9rem;color:var(--green)}
   .stat span{font-size:.9rem;color:var(--muted)}
 
   /* Bonos */
@@ -112,7 +119,7 @@
   .stack s{color:var(--muted)}
 
   /* Certificado */
-  .cert-title{text-align:center;font-family:"DM Sans",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--gold);font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:36px}
+  .cert-title{text-align:center;font-family:"DM Sans","DM Sans Fallback",Arial,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--gold);font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:36px}
   .cert-grid{display:grid;gap:32px;align-items:center}
   .cert-text p{color:var(--muted);font-weight:500;font-size:1.05rem;margin-bottom:16px}
   .cert-text p:last-child{margin-bottom:0}
@@ -126,7 +133,7 @@
   .price-card .from{color:var(--muted)}
   .price-card .from s{color:#C0392B}
   .price-card .badge{display:inline-block;background:#FFF3D6;color:#8A5C00;font-weight:700;font-size:.8rem;letter-spacing:.08em;padding:6px 12px;border-radius:999px;margin:10px 0}
-  .price{font-family:Fraunces,serif;font-weight:700;line-height:1;margin:8px 0 6px;color:var(--green)}
+  .price{font-family:Fraunces,"Fraunces Fallback",Georgia,serif;font-weight:700;line-height:1;margin:8px 0 6px;color:var(--green)}
   .price sup{font-size:1.3rem;vertical-align:top;position:relative;top:14px}
   .price .big{font-size:5rem}
   .price .cents{font-size:2rem}
@@ -136,7 +143,7 @@
   /* Garantía */
   .guarantee{display:grid;gap:24px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:24px;padding:30px}
   .seal{width:120px;height:120px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;text-align:center;
-    font-family:Fraunces,serif;font-weight:700;line-height:1.05;margin:0 auto;box-shadow:0 0 0 6px #fff,0 0 0 8px var(--gold)}
+    font-family:Fraunces,"Fraunces Fallback",Georgia,serif;font-weight:700;line-height:1.05;margin:0 auto;box-shadow:0 0 0 6px #fff,0 0 0 8px var(--gold)}
   .seal b{font-size:2.4rem;display:block}
   @media(min-width:700px){.guarantee{grid-template-columns:150px 1fr}}
 
@@ -156,7 +163,9 @@
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+t.src=v;s=b.getElementsByTagName(e)[0];
+var go=function(){s.parentNode.insertBefore(t,s)};
+if(b.readyState==='complete'){setTimeout(go,0)}else{f.addEventListener('load',function(){setTimeout(go,0)})}}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '893218283798963');
 fbq('track', 'PageView');
@@ -188,7 +197,7 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
       </div>
     </div>
     <div class="hero-img">
-      <img src="images/hero.webp"
+      <img src="images/hero-sm.webp" srcset="images/hero-sm.webp 640w, images/hero.webp 1024w" sizes="(min-width:860px) 500px, calc(100vw - 40px)"
            alt="Mariana con las muñecas de tela que enseña a crear en el curso" width="1024" height="827" fetchpriority="high">
     </div>
   </div>
@@ -203,17 +212,17 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
     </div>
     <div class="pains">
       <div class="pain">
-        <img loading="lazy" src="images/dor-materiales.webp" alt="Materiales para crear muñecas de tela">
+        <img width="800" height="533" loading="lazy" src="images/dor-materiales-sm.webp" srcset="images/dor-materiales-sm.webp 480w, images/dor-materiales.webp 800w" sizes="(min-width:1080px) 470px, (min-width:760px) 45vw, calc(100vw - 90px)" alt="Materiales para crear muñecas de tela">
         <div><h3>Quieres empezar, pero no sabes qué materiales elegir.</h3>
         <p>Telas, rellenos, hilos, moldes… el primer paso parece mucho más complicado de lo que debería.</p></div>
       </div>
       <div class="pain">
-        <img loading="lazy" src="images/dor-cosiendo.webp" alt="Cosiendo una muñeca de tela">
+        <img width="800" height="533" loading="lazy" src="images/dor-cosiendo-sm.webp" srcset="images/dor-cosiendo-sm.webp 480w, images/dor-cosiendo.webp 800w" sizes="(min-width:1080px) 470px, (min-width:760px) 45vw, calc(100vw - 90px)" alt="Cosiendo una muñeca de tela">
         <div><h3>Buscas una actividad creativa que te dé paz.</h3>
         <p>Un momento para desacelerar, trabajar con las manos y ver una idea tomar forma frente a ti.</p></div>
       </div>
       <div class="pain">
-        <img loading="lazy" src="images/dor-ingresos.webp" alt="Muñeca de tela con monedas y etiqueta de precio">
+        <img width="800" height="533" loading="lazy" src="images/dor-ingresos-sm.webp" srcset="images/dor-ingresos-sm.webp 480w, images/dor-ingresos.webp 800w" sizes="(min-width:1080px) 470px, (min-width:760px) 45vw, calc(100vw - 90px)" alt="Muñeca de tela con monedas y etiqueta de precio">
         <div><h3>Quieres convertir un hobby en ingresos.</h3>
         <p>Crear desde casa, ganar autonomía y vender muñecas con identidad propia.</p></div>
       </div>
@@ -278,10 +287,10 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
       <div><b>100%</b><span>online, a tu ritmo</span></div>
     </div>
     <div class="gallery tall">
-      <img loading="lazy" src="images/muneca-1.webp" alt="Muñeca de tela del curso">
-      <img loading="lazy" src="images/muneca-2.webp" alt="Muñeca de tela del curso">
-      <img loading="lazy" src="images/muneca-3.webp" alt="Muñeca de tela del curso">
-      <img loading="lazy" src="images/muneca-4.webp" alt="Muñeca de tela del curso">
+      <img width="800" height="800" loading="lazy" src="images/muneca-1-sm.webp" srcset="images/muneca-1-sm.webp 400w, images/muneca-1.webp 800w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Muñeca de tela del curso">
+      <img width="800" height="840" loading="lazy" src="images/muneca-2-sm.webp" srcset="images/muneca-2-sm.webp 400w, images/muneca-2.webp 800w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Muñeca de tela del curso">
+      <img width="768" height="807" loading="lazy" src="images/muneca-3-sm.webp" srcset="images/muneca-3-sm.webp 400w, images/muneca-3.webp 768w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Muñeca de tela del curso">
+      <img width="768" height="807" loading="lazy" src="images/muneca-4-sm.webp" srcset="images/muneca-4-sm.webp 400w, images/muneca-4.webp 768w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Muñeca de tela del curso">
     </div>
   </div>
 </section>
@@ -293,10 +302,10 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
     <h2>Ropita y zapatitos</h2>
     <p class="lead narrow" style="margin:0 auto">Cada muñeca con su propio estilo: conjuntos, gorritos y zapatitos que hacen la diferencia.</p>
     <div class="gallery">
-      <img loading="lazy" src="images/ropita-1.webp" alt="Ropita y zapatitos para muñecas de tela">
-      <img loading="lazy" src="images/ropita-2.webp" alt="Ropita y zapatitos para muñecas de tela">
-      <img loading="lazy" src="images/ropita-3.webp" alt="Ropita y zapatitos para muñecas de tela">
-      <img loading="lazy" src="images/ropita-4.webp" alt="Ropita y zapatitos para muñecas de tela">
+      <img width="768" height="768" loading="lazy" src="images/ropita-1-sm.webp" srcset="images/ropita-1-sm.webp 400w, images/ropita-1.webp 768w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Ropita y zapatitos para muñecas de tela">
+      <img width="768" height="768" loading="lazy" src="images/ropita-2-sm.webp" srcset="images/ropita-2-sm.webp 400w, images/ropita-2.webp 768w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Ropita y zapatitos para muñecas de tela">
+      <img width="768" height="768" loading="lazy" src="images/ropita-3-sm.webp" srcset="images/ropita-3-sm.webp 400w, images/ropita-3.webp 768w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Ropita y zapatitos para muñecas de tela">
+      <img width="768" height="768" loading="lazy" src="images/ropita-4-sm.webp" srcset="images/ropita-4-sm.webp 400w, images/ropita-4.webp 768w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Ropita y zapatitos para muñecas de tela">
     </div>
   </div>
 </section>
@@ -308,10 +317,10 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
     <h2>Recibe <em class="hl">GRATIS</em> un mini curso de Amigurumis</h2>
     <p class="lead narrow" style="margin:0 auto">Al adquirir tu acceso a Muñecas de Tela, te llevas también este mini curso para explorar una nueva técnica.</p>
     <div class="gallery tall">
-      <img loading="lazy" src="images/amigurumi-1.webp" alt="Amigurumi del mini curso">
-      <img loading="lazy" src="images/amigurumi-2.webp" alt="Amigurumi del mini curso">
-      <img loading="lazy" src="images/amigurumi-3.webp" alt="Amigurumi del mini curso">
-      <img loading="lazy" src="images/amigurumi-4.webp" alt="Amigurumi del mini curso">
+      <img width="800" height="1000" loading="lazy" src="images/amigurumi-1-sm.webp" srcset="images/amigurumi-1-sm.webp 400w, images/amigurumi-1.webp 800w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Amigurumi del mini curso">
+      <img width="800" height="1000" loading="lazy" src="images/amigurumi-2-sm.webp" srcset="images/amigurumi-2-sm.webp 400w, images/amigurumi-2.webp 800w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Amigurumi del mini curso">
+      <img width="800" height="1000" loading="lazy" src="images/amigurumi-3-sm.webp" srcset="images/amigurumi-3-sm.webp 400w, images/amigurumi-3.webp 800w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Amigurumi del mini curso">
+      <img width="800" height="1000" loading="lazy" src="images/amigurumi-4-sm.webp" srcset="images/amigurumi-4-sm.webp 400w, images/amigurumi-4.webp 800w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Amigurumi del mini curso">
     </div>
   </div>
 </section>
@@ -353,7 +362,7 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
     <h2>Bonos incluidos</h2>
     <div class="bonus-list">
       <div class="bonus">
-        <div class="media"><img loading="lazy" src="images/bono-1.webp" width="800" height="731" alt="Bônus 1: 100 moldes exclusivos de muñecas de tela"></div>
+        <div class="media"><img loading="lazy" src="images/bono-1-sm.webp" srcset="images/bono-1-sm.webp 480w, images/bono-1.webp 800w" sizes="(min-width:760px) 200px, calc(100vw - 80px)" width="800" height="731" alt="Bônus 1: 100 moldes exclusivos de muñecas de tela"></div>
         <div class="body">
           <div class="meta"><span class="num">Bônus 01</span><span class="pill">Incluido</span></div>
           <h3>Bônus 1 - 100 Moldes Exclusivos de Muñecas de Tela</h3>
@@ -362,7 +371,7 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
         </div>
       </div>
       <div class="bonus big">
-        <div class="media"><img loading="lazy" src="images/bono-2.webp" width="800" height="731" alt="Bônus 2: Guía completa de muñecas de tela"></div>
+        <div class="media"><img loading="lazy" src="images/bono-2-sm.webp" srcset="images/bono-2-sm.webp 480w, images/bono-2.webp 800w" sizes="(min-width:760px) 440px, calc(100vw - 80px)" width="800" height="731" alt="Bônus 2: Guía completa de muñecas de tela"></div>
         <div class="body">
           <div class="meta"><span class="num">Bônus 02</span><span class="pill">Incluido</span></div>
           <h3>Bônus 2 - Guía Completa de Muñecas de Tela</h3>
@@ -371,7 +380,7 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
         </div>
       </div>
       <div class="bonus">
-        <div class="media"><img loading="lazy" src="images/bono-3.webp" width="800" height="731" alt="Bônus 3: Clase y molde Abuelo Gnomo"></div>
+        <div class="media"><img loading="lazy" src="images/bono-3-sm.webp" srcset="images/bono-3-sm.webp 480w, images/bono-3.webp 800w" sizes="(min-width:760px) 200px, calc(100vw - 80px)" width="800" height="731" alt="Bônus 3: Clase y molde Abuelo Gnomo"></div>
         <div class="body">
           <div class="meta"><span class="num">Bônus 03</span><span class="pill">Incluido</span></div>
           <h3>Bônus 3 - Clase + Molde Abuelo Gnomo</h3>
@@ -390,11 +399,11 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
     <h2>Mira lo que dicen quienes ya empezaron</h2>
     <p class="hint">Desliza para ver más →</p>
     <div class="reviews">
-      <img loading="lazy" src="images/testimonio-1.webp" alt="Testimonio de alumna por WhatsApp">
-      <img loading="lazy" src="images/testimonio-2.webp" alt="Testimonio de alumna por WhatsApp">
-      <img loading="lazy" src="images/testimonio-3.webp" alt="Testimonio de alumna por WhatsApp">
-      <img loading="lazy" src="images/testimonio-4.webp" alt="Testimonio de alumna por WhatsApp">
-      <img loading="lazy" src="images/testimonio-5.webp" alt="Testimonio de alumna por WhatsApp">
+      <img width="560" height="841" loading="lazy" src="images/testimonio-1.webp" alt="Testimonio de alumna por WhatsApp">
+      <img width="474" height="1024" loading="lazy" src="images/testimonio-2.webp" alt="Testimonio de alumna por WhatsApp">
+      <img width="560" height="996" loading="lazy" src="images/testimonio-3.webp" alt="Testimonio de alumna por WhatsApp">
+      <img width="473" height="1024" loading="lazy" src="images/testimonio-4.webp" alt="Testimonio de alumna por WhatsApp">
+      <img width="474" height="1024" loading="lazy" src="images/testimonio-5.webp" alt="Testimonio de alumna por WhatsApp">
     </div>
   </div>
 </section>
@@ -411,7 +420,7 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
       <p class="once">Pago único · Acceso de por vida</p>
       <a class="btn js-cta" href="#">QUIERO APROVECHAR LA OFERTA<small>Acceso inmediato al curso</small></a>
       <p class="trust">🔒 Pago 100% seguro · Acceso inmediato</p>
-      <img class="pay" loading="lazy" src="images/metodos-de-pago.webp" alt="Métodos de pago disponibles">
+      <img width="800" height="157" class="pay" loading="lazy" src="images/metodos-de-pago.webp" alt="Métodos de pago disponibles">
     </div>
   </div>
 </section>
