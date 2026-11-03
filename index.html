@@ -43,6 +43,8 @@
     transition:transform .15s,background .15s}
   .btn small{font-weight:500;font-size:.8rem;opacity:.9;letter-spacing:0}
   .btn:hover{background:var(--green-d);transform:translateY(-2px)}
+  @media(max-width:600px){.btn{font-size:.88rem;letter-spacing:0;padding:14px 22px;max-width:100%}.btn small{font-size:.74rem}}
+  @media(max-width:380px){.btn{font-size:.8rem;padding:13px 16px}}
   .trust{margin-top:12px;font-size:.88rem;color:var(--muted)}
 
   /* Hero */
@@ -74,12 +76,25 @@
   .stat span{font-size:.9rem;color:var(--muted)}
 
   /* Bonos */
-  .bonus-grid{display:grid;gap:18px;margin-top:32px}
-  .bonus{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-  .bonus img{width:100%;aspect-ratio:260/238;object-fit:cover}
-  .bonus div{padding:18px}
-  .bonus .tag{font-size:.75rem;font-weight:700;letter-spacing:.1em;color:var(--gold);text-transform:uppercase}
-  @media(min-width:760px){.bonus-grid{grid-template-columns:repeat(3,1fr)}}
+  .bonus-list{display:grid;gap:22px;margin-top:32px;text-align:left}
+  .bonus{display:grid;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .bonus .media{background:#EFE3D3;padding:18px;display:flex;align-items:center;justify-content:center}
+  .bonus .media img{width:100%;max-width:300px;border-radius:14px;box-shadow:0 8px 20px rgba(23,43,45,.15)}
+  .bonus .body{padding:22px 24px 26px;display:flex;flex-direction:column;justify-content:center}
+  .bonus .meta{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .bonus .num{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .bonus .pill{font-size:.72rem;font-weight:700;color:var(--green-d);background:#E2F0E6;border-radius:999px;padding:3px 10px}
+  .bonus h3{font-size:1.3rem;margin-bottom:8px}
+  .bonus p{color:var(--muted);font-size:.95rem}
+  .bonus .inc{margin-top:14px;font-size:.85rem;font-weight:700;color:#B5553F}
+  @media(min-width:760px){
+    .bonus{grid-template-columns:240px 1fr}
+    .bonus .media img{max-width:200px}
+    .bonus.big{grid-template-columns:1fr 1.5fr}
+    .bonus.big .media{order:2;padding:26px}
+    .bonus.big .media img{max-width:440px}
+    .bonus.big h3{font-size:1.6rem}
+  }
 
   /* Testimonios */
   .reviews{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 20px;margin-top:28px}
@@ -131,17 +146,8 @@
   details[open] summary::after{content:"–"}
   details p{padding-bottom:18px;color:var(--muted)}
 
-  footer{padding:36px 0 110px;text-align:center;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
+  footer{padding:36px 0;text-align:center;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
 
-  /* CTA fijo en móvil */
-  .sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(253,251,248,.96);
-    backdrop-filter:blur(8px);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;
-    transform:translateY(110%);transition:transform .25s;z-index:20}
-  .sticky.show{transform:none}
-  .sticky .p{font-size:.85rem;line-height:1.2}
-  .sticky .p b{font-family:Fraunces,serif;font-size:1.3rem;color:var(--green)}
-  .sticky .btn{padding:12px 20px;font-size:.95rem}
-  @media(min-width:860px){.sticky{display:none}footer{padding-bottom:36px}}
 </style>
 </head>
 <body>
@@ -302,18 +308,33 @@
   <div class="wrap center">
     <span class="eyebrow">Y todavía más</span>
     <h2>Bonos incluidos</h2>
-    <div class="bonus-grid" style="text-align:left">
+    <div class="bonus-list">
       <div class="bonus">
-        <img loading="lazy" src="images/bono-1.webp" alt="Bono 1: 100 moldes exclusivos">
-        <div><span class="tag">Bono 1</span><h3>100 Moldes Exclusivos de Muñecas de Tela</h3></div>
+        <div class="media"><img loading="lazy" src="images/bono-1.webp" width="800" height="731" alt="Bônus 1: 100 moldes exclusivos de muñecas de tela"></div>
+        <div class="body">
+          <div class="meta"><span class="num">Bônus 01</span><span class="pill">Incluido</span></div>
+          <h3>Bônus 1 - 100 Moldes Exclusivos de Muñecas de Tela</h3>
+          <p>¡Recibe una colección con 100 moldes para crear hermosas muñecas de tela!</p>
+          <span class="inc">Incluido con tu compra</span>
+        </div>
+      </div>
+      <div class="bonus big">
+        <div class="media"><img loading="lazy" src="images/bono-2.webp" width="800" height="731" alt="Bônus 2: Guía completa de muñecas de tela"></div>
+        <div class="body">
+          <div class="meta"><span class="num">Bônus 02</span><span class="pill">Incluido</span></div>
+          <h3>Bônus 2 - Guía Completa de Muñecas de Tela</h3>
+          <p>Una guía práctica y fácil de seguir para aprender a crear hermosas muñecas de tela, desde el inicio hasta los acabados finales.</p>
+          <span class="inc">Incluido con tu compra</span>
+        </div>
       </div>
       <div class="bonus">
-        <img loading="lazy" src="images/bono-2.webp" alt="Bono 2: Guía completa">
-        <div><span class="tag">Bono 2</span><h3>Guía Completa de Muñecas de Tela</h3></div>
-      </div>
-      <div class="bonus">
-        <img loading="lazy" src="images/bono-3.webp" alt="Bono 3: Clase y molde Abuelo Gnomo">
-        <div><span class="tag">Bono 3</span><h3>Clase + Molde Abuelo Gnomo</h3></div>
+        <div class="media"><img loading="lazy" src="images/bono-3.webp" width="800" height="731" alt="Bônus 3: Clase y molde Abuelo Gnomo"></div>
+        <div class="body">
+          <div class="meta"><span class="num">Bônus 03</span><span class="pill">Incluido</span></div>
+          <h3>Bônus 3 - Clase + Molde Abuelo Gnomo</h3>
+          <p>Aprende a crear este encantador Abuelo Gnomo paso a paso, de forma sencilla y práctica.</p>
+          <span class="inc">Incluido con tu compra</span>
+        </div>
       </div>
     </div>
   </div>
@@ -423,20 +444,12 @@
   <div class="wrap">© <span id="y"></span> Curso de Muñecas de Tela de Mariana · Todos los derechos reservados</div>
 </footer>
 
-<div class="sticky" id="sticky">
-  <div class="p">Solo hoy<br><b>US$ 9,90</b></div>
-  <a class="btn js-cta" href="#">QUIERO MI ACCESO</a>
-</div>
-
 <script>
   // Todos los botones llevan al checkout (excepto el del hero, que baja a la oferta)
   document.querySelectorAll('.js-cta').forEach(a => {
     if (a.getAttribute('href') === '#') { a.href = CHECKOUT; a.rel = 'noopener'; }
   });
   document.getElementById('y').textContent = new Date().getFullYear();
-  // Barra fija en móvil después del hero
-  const sticky = document.getElementById('sticky'), hero = document.querySelector('.hero');
-  new IntersectionObserver(([e]) => sticky.classList.toggle('show', !e.isIntersecting)).observe(hero);
 </script>
 </body>
 </html>
