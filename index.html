@@ -95,6 +95,7 @@
   .bonus .pill{font-size:.72rem;font-weight:700;color:var(--green-d);background:#E2F0E6;border-radius:999px;padding:3px 10px}
   .bonus h3{font-size:1.3rem;margin-bottom:8px}
   .bonus p{color:var(--muted);font-size:.95rem}
+  .review{margin:0}
   .bonus .inc{margin-top:14px;font-size:.85rem;font-weight:700;color:#B5553F}
   @media(min-width:760px){
     .bonus{grid-template-columns:240px 1fr}
@@ -106,9 +107,17 @@
   }
 
   /* Testimonios */
-  .reviews{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 20px;margin-top:28px}
-  .reviews img{flex:0 0 auto;width:min(280px,78vw);border-radius:18px;scroll-snap-align:center;box-shadow:var(--shadow)}
+  .reviews{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 20px;margin-top:24px;scrollbar-width:none}
+  .reviews::-webkit-scrollbar{display:none}
+  .review{flex:0 0 auto;width:min(230px,62vw);aspect-ratio:195/350;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    box-shadow:0 6px 18px rgba(23,43,45,.07);scroll-snap-align:center}
+  .review img{width:100%;height:100%;object-fit:cover;object-position:top center}
   .hint{font-size:.85rem;color:var(--muted)}
+  @media(min-width:760px){
+    .reviews{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;overflow:visible;padding:8px 0 0;margin-top:32px}
+    .review{width:auto}
+    .hint{display:none}
+  }
 
   /* Stack de valor */
   .stack{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:10px 24px;margin-top:28px;box-shadow:var(--shadow)}
@@ -403,11 +412,11 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
     <h2>Mira lo que dicen quienes ya empezaron</h2>
     <p class="hint">Desliza para ver más →</p>
     <div class="reviews">
-      <img width="560" height="841" loading="lazy" src="images/testimonio-1.webp" alt="Testimonio de alumna por WhatsApp">
-      <img width="474" height="1024" loading="lazy" src="images/testimonio-2.webp" alt="Testimonio de alumna por WhatsApp">
-      <img width="560" height="996" loading="lazy" src="images/testimonio-3.webp" alt="Testimonio de alumna por WhatsApp">
-      <img width="473" height="1024" loading="lazy" src="images/testimonio-4.webp" alt="Testimonio de alumna por WhatsApp">
-      <img width="474" height="1024" loading="lazy" src="images/testimonio-5.webp" alt="Testimonio de alumna por WhatsApp">
+      <figure class="review"><img width="474" height="1024" loading="lazy" src="images/testimonio-2.webp" alt="Mensaje de WhatsApp de Sara, alumna del curso, mostrando su muñeca"></figure>
+      <figure class="review"><img width="560" height="996" loading="lazy" src="images/testimonio-3.webp" alt="Mensaje de WhatsApp de Silvania, alumna del curso, mostrando su muñeca"></figure>
+      <figure class="review"><img width="473" height="1024" loading="lazy" src="images/testimonio-4.webp" alt="Mensaje de WhatsApp de Veridiana, alumna del curso, mostrando su muñeca"></figure>
+      <figure class="review"><img width="474" height="1024" loading="lazy" src="images/testimonio-5.webp" alt="Mensaje de WhatsApp de Juliana, alumna del curso, mostrando su muñeca"></figure>
+      <figure class="review"><img width="560" height="841" loading="lazy" src="images/testimonio-1.webp" alt="Mensaje de WhatsApp de Simone, alumna del curso, mostrando su muñeca"></figure>
     </div>
   </div>
 </section>
