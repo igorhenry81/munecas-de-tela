@@ -132,7 +132,9 @@
   .cert-grid{display:grid;gap:32px;align-items:center}
   .cert-text p{color:var(--muted);font-weight:500;font-size:1.05rem;margin-bottom:16px}
   .cert-text p:last-child{margin-bottom:0}
-  .cert-img{width:100%;box-shadow:var(--shadow)}
+  .cert-img{width:92%;margin:12px auto;border-radius:14px;transform:rotate(-3deg);
+    box-shadow:0 2px 4px rgba(23,43,45,.06),0 18px 40px rgba(23,43,45,.16);transition:transform .3s}
+  .cert-img:hover{transform:rotate(-1deg) scale(1.01)}
   @media(min-width:860px){.cert-grid{grid-template-columns:1fr 1fr;gap:48px}}
 
   /* Oferta */
