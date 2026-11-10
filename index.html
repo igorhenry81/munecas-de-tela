@@ -99,7 +99,6 @@
   .bonus .pill{font-size:.72rem;font-weight:700;color:var(--green-d);background:#E2F0E6;border-radius:999px;padding:3px 10px}
   .bonus h3{font-size:1.3rem;margin-bottom:8px}
   .bonus p{color:var(--muted);font-size:.95rem}
-  .review{margin:0}
   .bonus .inc{margin-top:14px;font-size:.85rem;font-weight:700;color:#B5553F}
   @media(min-width:760px){
     .bonus{grid-template-columns:240px 1fr}
@@ -111,17 +110,31 @@
   }
 
   /* Testimonios */
-  .reviews{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 20px;margin-top:24px;scrollbar-width:none}
-  .reviews::-webkit-scrollbar{display:none}
-  .review{flex:0 0 auto;width:min(230px,62vw);aspect-ratio:195/350;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;
-    box-shadow:0 6px 18px rgba(23,43,45,.07);scroll-snap-align:center}
-  .review img{width:100%;height:100%;object-fit:cover;object-position:top center}
-  .hint{font-size:.85rem;color:var(--muted)}
+  /* Comentarios estilo Facebook */
+  .fb-row{display:flex;align-items:flex-start;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 18px;margin-top:22px;scrollbar-width:none;text-align:left}
+  .fb-row::-webkit-scrollbar{display:none}
+  .fb{flex:0 0 auto;width:min(330px,84vw);scroll-snap-align:center;background:#fff;border:1px solid #E4E6EB;border-radius:14px;padding:14px 14px 16px;
+    box-shadow:0 4px 14px rgba(23,43,45,.06);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#050505}
+  .fb-c{display:flex;gap:8px;align-items:flex-start}
+  .fb-av{flex:0 0 40px;width:40px;height:40px;border-radius:50%;object-fit:cover;background:#ddd}
+  .fb-r .fb-av{flex-basis:32px;width:32px;height:32px}
+  .fb-b{background:#F0F2F5;border-radius:18px;padding:8px 12px;font-size:15px;line-height:1.34;min-width:0}
+  .fb-n{display:block;font-weight:600;font-size:13px;line-height:1.3;margin-bottom:2px}
+  .fb-n small{font-weight:400;color:#65676B;font-size:12px}
+  .fb-tag{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#65676B;margin-bottom:1px}
+  .fb-ph{margin:6px 0 0 48px;border-radius:12px;overflow:hidden;max-width:220px;border:1px solid #E4E6EB}
+  .fb-ph img{width:100%;height:auto;display:block}
+  .fb-meta{margin:4px 0 0 60px;font-size:12px;font-weight:600;color:#65676B;display:flex;gap:14px;align-items:center}
+  .fb-meta .heart{color:#F33E58}
+  .fb-r{margin:10px 0 0 48px}
+  .fb-r + .fb-r{margin-top:8px}
+  .fb-b + .fb-b{margin-top:4px}
   @media(min-width:760px){
-    .reviews{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;overflow:visible;padding:8px 0 0;margin-top:32px}
-    .review{width:auto}
+    .fb-row{display:block;columns:3 300px;column-gap:18px;overflow:visible;padding:6px 0 0;margin-top:30px}
+    .fb{width:auto;break-inside:avoid;margin:0 0 18px;display:inline-block}
     .hint{display:none}
   }
+  .hint{font-size:.85rem;color:var(--muted)}
 
   /* Stack de valor */
   .stack{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:10px 24px;margin-top:28px;box-shadow:var(--shadow)}
@@ -415,13 +428,14 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
   <div class="wrap center">
     <span class="eyebrow">Alumnas reales</span>
     <h2>Mira lo que dicen quienes ya empezaron</h2>
+    <p class="lead" style="font-size:1rem;margin-top:-6px">Mensajes reales que nuestras alumnas nos enviaron.</p>
     <p class="hint">Desliza para ver más →</p>
-    <div class="reviews">
-      <figure class="review"><img width="474" height="1024" loading="lazy" src="images/testimonio-2.webp" alt="Mensaje de WhatsApp de Sara, alumna del curso, mostrando su muñeca"></figure>
-      <figure class="review"><img width="560" height="996" loading="lazy" src="images/testimonio-3.webp" alt="Mensaje de WhatsApp de Silvania, alumna del curso, mostrando su muñeca"></figure>
-      <figure class="review"><img width="473" height="1024" loading="lazy" src="images/testimonio-4.webp" alt="Mensaje de WhatsApp de Veridiana, alumna del curso, mostrando su muñeca"></figure>
-      <figure class="review"><img width="474" height="1024" loading="lazy" src="images/testimonio-5.webp" alt="Mensaje de WhatsApp de Juliana, alumna del curso, mostrando su muñeca"></figure>
-      <figure class="review"><img width="560" height="841" loading="lazy" src="images/testimonio-1.webp" alt="Mensaje de WhatsApp de Simone, alumna del curso, mostrando su muñeca"></figure>
+    <div class="fb-row">
+      <article class="fb"><div class="fb-c"><img class="fb-av" loading="lazy" src="images/av-sara.webp" width="96" height="96" alt=""><div><div class="fb-b"><span class="fb-n">Sara <small>· Alumna</small></span>Pasando por aquí para decir que estoy amando tu curso. Lo compré, lo hice en una semana y conseguí producir mi primera muñeca! ❤️👏☺️</div></div></div><div class="fb-ph"><img loading="lazy" src="images/dep-sara.webp" width="290" height="425" alt="Muñeca de tela hecha por Sara, alumna del curso"></div><div class="fb-meta"><span>Mensaje enviado por WhatsApp</span></div><div class="fb-r"><div class="fb-c"><img class="fb-av" loading="lazy" src="images/av-mariana.webp" width="96" height="96" alt=""><div class="fb-b"><span class="fb-tag">✎ Profesora</span><span class="fb-n">Mariana</span>¡Hola Sara, qué tal! ¡Quedó maravillosa! ¡Qué resultado increíble, muchas felicidades por tu primera creación! 👏❤️❤️</div></div></div></article>
+      <article class="fb"><div class="fb-c"><img class="fb-av" loading="lazy" src="images/av-silvania.webp" width="96" height="96" alt=""><div><div class="fb-b"><span class="fb-n">Silvania <small>· Alumna</small></span>Pasando para mostrar mi evolución con el curso de muñecas de tela. Estoy amando los resultados que tuve en esta última clase.</div><div class="fb-b">Esta fue mi última producción, estoy muy contenta con el resultado y ya estoy con más de 4 encargos 😍😍😍😍</div></div></div><div class="fb-ph"><img loading="lazy" src="images/dep-silvania.webp" width="327" height="373" alt="Muñeca de tela hecha por Silvania, alumna del curso"></div><div class="fb-meta"><span>Mensaje enviado por WhatsApp</span></div><div class="fb-r"><div class="fb-c"><img class="fb-av" loading="lazy" src="images/av-mariana.webp" width="96" height="96" alt=""><div class="fb-b"><span class="fb-tag">✎ Profesora</span><span class="fb-n">Mariana</span>¡Hola Silvania, buenos días! ¡Guau, qué trabajo tan lindo! 😍 Estoy encantada con tu resultado. ¡Felicitaciones! 👏</div></div></div></article>
+      <article class="fb"><div class="fb-c"><img class="fb-av" loading="lazy" src="images/av-veridiana.webp" width="96" height="96" alt=""><div><div class="fb-b"><span class="fb-n">Veridiana <small>· Alumna</small></span>¡Miren esta delicadeza que hice! ☺️ comencé el curso hace 1 mes, pero solo ahora decidí hacer la primera muñeca, ¿qué les pareció?</div></div></div><div class="fb-ph"><img loading="lazy" src="images/dep-veridiana.webp" width="295" height="393" alt="Muñeca de tela hecha por Veridiana, alumna del curso"></div><div class="fb-meta"><span>Mensaje enviado por WhatsApp</span></div><div class="fb-r"><div class="fb-c"><img class="fb-av" loading="lazy" src="images/av-mariana.webp" width="96" height="96" alt=""><div class="fb-b"><span class="fb-tag">✎ Profesora</span><span class="fb-n">Mariana</span>Buenas noches Veridiana, ¿todo bien? ¡Nos encantó esta primera producción, quedó hermosa!! ❤️🙏🏼</div></div></div><div class="fb-r"><div class="fb-c"><img class="fb-av" loading="lazy" src="images/av-veridiana.webp" width="96" height="96" alt=""><div class="fb-b"><span class="fb-n">Veridiana <small>· Alumna</small></span>¡Muchas gracias! Haré algunas más para regalar, valió totalmente la pena la inversión 💕</div></div></div></article>
+      <article class="fb"><div class="fb-c"><img class="fb-av" loading="lazy" src="images/av-juliana.webp" width="96" height="96" alt=""><div><div class="fb-b"><span class="fb-n">Juliana <small>· Alumna</small></span>Hice mi inscripción en el curso hace dos semanas y ya hice mi segunda pieza</div></div></div><div class="fb-ph"><img loading="lazy" src="images/dep-juliana.webp" width="305" height="376" alt="Muñeca de tela hecha por Juliana, alumna del curso"></div><div class="fb-meta"><span>Mensaje enviado por WhatsApp</span></div><div class="fb-r"><div class="fb-c"><img class="fb-av" loading="lazy" src="images/av-mariana.webp" width="96" height="96" alt=""><div class="fb-b"><span class="fb-tag">✎ Profesora</span><span class="fb-n">Mariana</span>¡Qué increíble! 😊 ¡Felicidades por tu dedicación y esfuerzo! Estoy muy feliz de saber que ya estás en tu segunda pieza!</div></div></div></article>
+      <article class="fb"><div class="fb-c"><img class="fb-av" loading="lazy" src="images/av-simone.webp" width="96" height="96" alt=""><div><div class="fb-b"><span class="fb-n">Simone <small>· Alumna</small></span>Hice mi primera muñeca ♡</div><div class="fb-b">Esta fue la primera clase que hice y ya salió esta belleza. Estoy muy agradecida por la oportunidad de este curso, porque está muy bien explicado y es fácil de seguir. Me encantó la experiencia de hacer esta muñeca.</div></div></div><div class="fb-ph"><img loading="lazy" src="images/dep-simone.webp" width="303" height="410" alt="Muñeca de tela hecha por Simone, alumna del curso"></div><div class="fb-meta"><span>Mensaje enviado por WhatsApp</span></div></article>
     </div>
   </div>
 </section>
