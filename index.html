@@ -82,6 +82,7 @@
   .gallery.solo{grid-template-columns:1fr}
   @media(min-width:760px){.gallery,.gallery.solo{grid-template-columns:repeat(4,1fr)}}
 
+  @media(max-width:759px){.desk-only{display:none!important}}
   .stat{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:28px}
   .stat div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 22px;min-width:150px}
   .stat b{display:block;font-family:Fraunces,"Fraunces Fallback",Georgia,serif;font-size:1.9rem;color:var(--green)}
@@ -298,8 +299,8 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
   <div class="wrap center">
     <span class="eyebrow">La solución</span>
     <h2>Existe una manera más sencilla de crear tus muñecas</h2>
-    <p class="lead narrow" style="margin:0 auto">Un método paso a paso, del molde al último detalle, pensado para quien empieza desde cero.</p>
-    <div class="stat">
+    <p class="lead narrow desk-only" style="margin:0 auto">Un método paso a paso, del molde al último detalle, pensado para quien empieza desde cero.</p>
+    <div class="stat desk-only">
       <div><b>∞</b><span>acceso de por vida</span></div>
       <div><b>100%</b><span>online, a tu ritmo</span></div>
     </div>
