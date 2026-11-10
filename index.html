@@ -79,7 +79,8 @@
   .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:32px}
   .gallery img{border-radius:14px;aspect-ratio:1/1;object-fit:cover;width:100%;background:#eee}
   .gallery.tall img{aspect-ratio:4/5}
-  @media(min-width:760px){.gallery{grid-template-columns:repeat(4,1fr)}}
+  .gallery.solo{grid-template-columns:1fr}
+  @media(min-width:760px){.gallery,.gallery.solo{grid-template-columns:repeat(4,1fr)}}
 
   .stat{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:28px}
   .stat div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 22px;min-width:150px}
@@ -302,11 +303,11 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
       <div><b>∞</b><span>acceso de por vida</span></div>
       <div><b>100%</b><span>online, a tu ritmo</span></div>
     </div>
-    <div class="gallery tall">
-      <img width="800" height="800" loading="lazy" src="images/muneca-1-sm.webp" srcset="images/muneca-1-sm.webp 400w, images/muneca-1.webp 800w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Muñeca de tela del curso">
-      <img width="800" height="840" loading="lazy" src="images/muneca-2-sm.webp" srcset="images/muneca-2-sm.webp 400w, images/muneca-2.webp 800w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Muñeca de tela del curso">
-      <img width="768" height="807" loading="lazy" src="images/muneca-3-sm.webp" srcset="images/muneca-3-sm.webp 400w, images/muneca-3.webp 768w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Muñeca de tela del curso">
-      <img width="768" height="807" loading="lazy" src="images/muneca-4-sm.webp" srcset="images/muneca-4-sm.webp 400w, images/muneca-4.webp 768w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Muñeca de tela del curso">
+    <div class="gallery tall solo">
+      <img width="800" height="800" loading="lazy" src="images/muneca-1-sm.webp" srcset="images/muneca-1-sm.webp 400w, images/muneca-1.webp 800w" sizes="(min-width:760px) 245px, calc(100vw - 40px)" alt="Muñeca de tela del curso">
+      <img width="800" height="840" loading="lazy" src="images/muneca-2-sm.webp" srcset="images/muneca-2-sm.webp 400w, images/muneca-2.webp 800w" sizes="(min-width:760px) 245px, calc(100vw - 40px)" alt="Muñeca de tela del curso">
+      <img width="768" height="807" loading="lazy" src="images/muneca-3-sm.webp" srcset="images/muneca-3-sm.webp 400w, images/muneca-3.webp 768w" sizes="(min-width:760px) 245px, calc(100vw - 40px)" alt="Muñeca de tela del curso">
+      <img width="768" height="807" loading="lazy" src="images/muneca-4-sm.webp" srcset="images/muneca-4-sm.webp 400w, images/muneca-4.webp 768w" sizes="(min-width:760px) 245px, calc(100vw - 40px)" alt="Muñeca de tela del curso">
     </div>
   </div>
 </section>
@@ -317,11 +318,11 @@ src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></no
     <span class="eyebrow">También aprendes</span>
     <h2>Ropita y zapatitos</h2>
     <p class="lead narrow" style="margin:0 auto">Cada muñeca con su propio estilo: conjuntos, gorritos y zapatitos que hacen la diferencia.</p>
-    <div class="gallery">
-      <img width="768" height="768" loading="lazy" src="images/ropita-1-sm.webp" srcset="images/ropita-1-sm.webp 400w, images/ropita-1.webp 768w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Ropita y zapatitos para muñecas de tela">
-      <img width="768" height="768" loading="lazy" src="images/ropita-2-sm.webp" srcset="images/ropita-2-sm.webp 400w, images/ropita-2.webp 768w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Ropita y zapatitos para muñecas de tela">
-      <img width="768" height="768" loading="lazy" src="images/ropita-3-sm.webp" srcset="images/ropita-3-sm.webp 400w, images/ropita-3.webp 768w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Ropita y zapatitos para muñecas de tela">
-      <img width="768" height="768" loading="lazy" src="images/ropita-4-sm.webp" srcset="images/ropita-4-sm.webp 400w, images/ropita-4.webp 768w" sizes="(min-width:760px) 245px, calc(50vw - 27px)" alt="Ropita y zapatitos para muñecas de tela">
+    <div class="gallery solo">
+      <img width="768" height="768" loading="lazy" src="images/ropita-1-sm.webp" srcset="images/ropita-1-sm.webp 400w, images/ropita-1.webp 768w" sizes="(min-width:760px) 245px, calc(100vw - 40px)" alt="Ropita y zapatitos para muñecas de tela">
+      <img width="768" height="768" loading="lazy" src="images/ropita-2-sm.webp" srcset="images/ropita-2-sm.webp 400w, images/ropita-2.webp 768w" sizes="(min-width:760px) 245px, calc(100vw - 40px)" alt="Ropita y zapatitos para muñecas de tela">
+      <img width="768" height="768" loading="lazy" src="images/ropita-3-sm.webp" srcset="images/ropita-3-sm.webp 400w, images/ropita-3.webp 768w" sizes="(min-width:760px) 245px, calc(100vw - 40px)" alt="Ropita y zapatitos para muñecas de tela">
+      <img width="768" height="768" loading="lazy" src="images/ropita-4-sm.webp" srcset="images/ropita-4-sm.webp 400w, images/ropita-4.webp 768w" sizes="(min-width:760px) 245px, calc(100vw - 40px)" alt="Ropita y zapatitos para muñecas de tela">
     </div>
   </div>
 </section>
