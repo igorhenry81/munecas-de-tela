@@ -108,26 +108,15 @@
 
   footer{padding:32px 0;text-align:center;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
 </style>
-<!-- Meta Pixel -->
+<!-- Sentinel tracker -->
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-var done=0,ev=['scroll','touchstart','pointerdown','mousemove','keydown'],
-go=function(){if(done)return;done=1;ev.forEach(function(x){f.removeEventListener(x,go,{passive:!0})});s.parentNode.insertBefore(t,s)};
-ev.forEach(function(x){f.addEventListener(x,go,{passive:!0})});
-var later=function(){setTimeout(go,3500)};
-if(b.readyState==='complete'){later()}else{f.addEventListener('load',later)}}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '893218283798963');
-fbq('track', 'PageView');
+(function(s,e,n,t,i){s[n]=s[n]||function(){(s[n].q=s[n].q||[]).push(arguments)};
+var js=e.createElement('script');js.async=1;js.src=t+'?tid='+i;
+e.head.appendChild(js)})(window,document,'sentinel','https://track.munecasdetela.site/api/t/tracker.js','902558cb-3c7c-4a37-a896-e0b0c4ca7034');
 </script>
-<!-- End Meta Pixel -->
+<!-- End Sentinel tracker -->
 </head>
 <body>
-<noscript><img height="1" width="1" style="display:none" alt=""
-src="https://www.facebook.com/tr?id=893218283798963&ev=PageView&noscript=1"></noscript>
 
 <div class="alertbar">⚠️ ¡ESPERA! Tu pedido aún no está completo — no cierres esta página</div>
 <div class="steps">Paso 2 de 3 · Personaliza tu compra<div class="bar"><i></i></div></div>
