@@ -172,6 +172,21 @@
 
   footer{padding:36px 0;text-align:center;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
 
+
+  /* Profesora */
+  .prof{display:grid;gap:24px;align-items:center;max-width:1140px;margin:0 auto;padding:0 20px}
+  .prof-img img{width:100%;border-radius:15px}
+  @media(min-width:900px){.prof{grid-template-columns:1fr 1fr;gap:24px}}
+  .prof-label{font-size:11px;font-weight:800;letter-spacing:1.8px;color:#28616c;margin-bottom:6px;font-family:Arial,Helvetica,sans-serif}
+  .prof-title{margin:0 0 12px;font-family:Georgia,"Times New Roman",serif;font-size:34px;line-height:1.1;color:#073b49;font-weight:500;letter-spacing:0}
+  .prof-text{margin:0 0 13px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.48;font-weight:600;color:#214b55}
+  .prof-text strong{color:#c58a16;font-weight:800}
+  .prof-ben{margin-top:15px;font-family:Arial,Helvetica,sans-serif}
+  .prof-ben div{display:flex;align-items:center;gap:10px;min-height:43px;padding:6px 0;border-bottom:1px solid #deded9}
+  .prof-ben div:first-child{border-top:1px solid #deded9}
+  .prof-ben i{font-style:normal;width:27px;height:27px;min-width:27px;border:1px solid #d8ddd9;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;color:#28616c}
+  .prof-ben span{font-size:13.5px;line-height:1.25;font-weight:700;color:#163f4a}
+  @media(max-width:600px){.prof-title{font-size:27px;margin-bottom:11px}.prof-text{font-size:13.5px;line-height:1.45}.prof-ben div{min-height:40px}.prof-ben span{font-size:12.5px}}
 </style>
 
 </head>
@@ -421,6 +436,26 @@
       <a class="btn js-cta" href="#">QUIERO APROVECHAR LA OFERTA<small>Acceso inmediato al curso</small></a>
       <p class="trust">🔒 Pago 100% seguro · Acceso inmediato</p>
       <img width="800" height="157" class="pay" loading="lazy" src="images/metodos-de-pago.webp" alt="Métodos de pago disponibles">
+    </div>
+  </div>
+</section>
+
+<!-- PROFESORA -->
+<section>
+  <div class="prof">
+    <div class="prof-img"><img loading="lazy" src="images/profesora-2-sm.webp" srcset="images/profesora-2-sm.webp 640w, images/profesora-2.webp 1024w" sizes="(min-width:900px) 550px, calc(100vw - 40px)" width="1024" height="716" alt="Mariana Santos, profesora del curso, con sus muñecas de tela"></div>
+    <div>
+      <div class="prof-label">PROFESORA</div>
+      <h2 class="prof-title">Conoce a quien te enseñará</h2>
+      <p class="prof-text">Soy <strong>Mariana Santos</strong>, artesana, profesora y apasionada por las <strong>muñecas de tela</strong>. Comencé de manera sencilla, creando mis primeras muñecas <strong>a mano</strong>, impulsada por el amor por esta hermosa artesanía.</p>
+      <p class="prof-text">Con el tiempo, mi pasión creció y hoy comparto todo lo que he aprendido en mis clases online, enseñando a mujeres a crear sus propias muñecas, incluso si comienzan <strong>desde cero</strong>.</p>
+      <p class="prof-text">Mi objetivo es enseñarte de forma clara y sencilla, cuidando cada detalle para que puedas crear muñecas <strong>bonitas y bien terminadas</strong>.</p>
+      <p class="prof-text">Si te encanta la artesanía, será un placer acompañarte en este proceso.</p>
+      <div class="prof-ben">
+        <div><i>♡</i><span>Clases para principiantes, sin complicaciones</span></div>
+        <div><i>◎</i><span>Detalles que hacen que tu muñeca luzca profesional</span></div>
+        <div><i>☵</i><span>Soporte para resolver tus dudas</span></div>
+      </div>
     </div>
   </div>
 </section>
