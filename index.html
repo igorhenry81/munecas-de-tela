@@ -171,12 +171,12 @@
   .world-t span{display:block;font-size:.8rem;line-height:1.35;color:var(--muted);margin-top:2px}
   .world-t .conv{display:flex;align-items:center;gap:6px;margin-top:4px}
   .cur{display:inline-block;position:relative;flex:0 0 auto;height:1.5em;width:3.1em;overflow:hidden;background:#fff;border:1px solid #DDEBE1;border-radius:999px;font-size:.72rem;line-height:1.5em;text-align:center}
-  .cur i{position:absolute;left:0;right:0;top:0;font-style:normal;font-weight:700;color:var(--green-d);opacity:0;animation:wcur 12s infinite}
+  .cur i{position:absolute;left:0;right:0;top:0;font-style:normal;font-weight:700;color:var(--green-d);opacity:0;animation:wcur 14s infinite}
   .cur i:nth-child(2){animation-delay:2s}.cur i:nth-child(3){animation-delay:4s}.cur i:nth-child(4){animation-delay:6s}
-  .cur i:nth-child(5){animation-delay:8s}.cur i:nth-child(6){animation-delay:10s}
+  .cur i:nth-child(5){animation-delay:8s}.cur i:nth-child(6){animation-delay:10s}.cur i:nth-child(7){animation-delay:12s}
   @keyframes wspin{to{transform:translateX(-50%)}}
   @keyframes wshine{0%,55%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
-  @keyframes wcur{0%{opacity:0;transform:translateY(60%)}3%,14%{opacity:1;transform:none}17%,100%{opacity:0;transform:translateY(-60%)}}
+  @keyframes wcur{0%{opacity:0;transform:translateY(60%)}2.5%,12%{opacity:1;transform:none}14.3%,100%{opacity:0;transform:translateY(-60%)}}
   @media(prefers-reduced-motion:reduce){.globe .land,.world::after{animation:none}.cur i{animation:none}.cur i:first-child{opacity:1}}
 
   /* Garantía */
@@ -471,7 +471,7 @@ e.head.appendChild(js)})(window,document,'sentinel','https://trackk.munecasdetel
         <div class="globe" aria-hidden="true"><div class="land"><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="#5FB36B"><path d="M8 22c8-6 20-5 24 2s-2 12 4 18-4 14-10 12-8-10-14-12S0 28 8 22z"/><path d="M30 60c6-2 12 2 12 9s-4 15-9 18-7-6-6-12-3-13 3-15z"/><path d="M52 18c10-4 24-2 30 4s2 10-6 10-10 6-16 4-12-14-8-18z"/><path d="M60 48c6-3 14 0 16 6s-2 12-8 12-12-2-12-8 0-7 4-10z"/><path d="M84 70c5-2 10 2 9 6s-6 6-9 4-4-8 0-10z"/></g></svg><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="#5FB36B"><path d="M8 22c8-6 20-5 24 2s-2 12 4 18-4 14-10 12-8-10-14-12S0 28 8 22z"/><path d="M30 60c6-2 12 2 12 9s-4 15-9 18-7-6-6-12-3-13 3-15z"/><path d="M52 18c10-4 24-2 30 4s2 10-6 10-10 6-16 4-12-14-8-18z"/><path d="M60 48c6-3 14 0 16 6s-2 12-8 12-12-2-12-8 0-7 4-10z"/><path d="M84 70c5-2 10 2 9 6s-6 6-9 4-4-8 0-10z"/></g></svg></div></div>
         <div class="world-t">
           <b>Disponible para todo el mundo 🌎</b>
-          <span>Paga en la moneda local de tu país</span><span class="conv"><span class="cur" aria-hidden="true"><i>MXN</i><i>COP</i><i>ARS</i><i>PEN</i><i>CLP</i><i>USD</i></span> Conversión automática</span>
+          <span>Paga en la moneda local de tu país</span><span class="conv"><span class="cur" aria-hidden="true"><i>MXN</i><i>COP</i><i>ARS</i><i>PEN</i><i>CLP</i><i>USD</i><i>EUR</i></span> Conversión automática</span>
         </div>
       </div>
     </div>
