@@ -160,12 +160,8 @@
     background:linear-gradient(135deg,#F1F7F3,#FFF7E6);border:1px solid #DDEBE1;border-radius:16px;padding:12px 14px;position:relative;overflow:hidden}
   .world::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.75) 50%,transparent 70%);
     transform:translateX(-100%);animation:wshine 3.6s ease-in-out infinite}
-  .globe{flex:0 0 48px;width:48px;height:48px;border-radius:50%;position:relative;overflow:hidden;
-    background:radial-gradient(circle at 32% 30%,#7CC4E8,#2F7FB6 60%,#1E5B86);box-shadow:inset -6px -6px 12px rgba(0,0,0,.25),0 4px 10px rgba(47,127,182,.3)}
-  .globe .land{position:absolute;top:0;left:0;height:100%;width:200%;display:flex;animation:wspin 8s linear infinite}
-  .globe .land svg{width:50%;height:100%;flex:0 0 50%}
-  .globe::before{content:"";position:absolute;inset:0;border-radius:50%;z-index:2;
-    background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.55),transparent 40%)}
+  .globe{flex:0 0 64px;width:64px;height:64px;border-radius:50%;filter:drop-shadow(0 4px 8px rgba(30,91,134,.35))}
+  .globe img{width:64px;height:64px;display:block}
   .world-t{min-width:0}
   .world-t b{display:block;font-size:.92rem;line-height:1.2;color:var(--ink);letter-spacing:.01em}
   .world-t span{display:block;font-size:.8rem;line-height:1.35;color:var(--muted);margin-top:2px}
@@ -174,10 +170,9 @@
   .cur i{position:absolute;left:0;right:0;top:0;font-style:normal;font-weight:700;color:var(--green-d);opacity:0;animation:wcur 14s infinite}
   .cur i:nth-child(2){animation-delay:2s}.cur i:nth-child(3){animation-delay:4s}.cur i:nth-child(4){animation-delay:6s}
   .cur i:nth-child(5){animation-delay:8s}.cur i:nth-child(6){animation-delay:10s}.cur i:nth-child(7){animation-delay:12s}
-  @keyframes wspin{to{transform:translateX(-50%)}}
   @keyframes wshine{0%,55%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
   @keyframes wcur{0%{opacity:0;transform:translateY(60%)}2.5%,12%{opacity:1;transform:none}14.3%,100%{opacity:0;transform:translateY(-60%)}}
-  @media(prefers-reduced-motion:reduce){.globe .land,.world::after{animation:none}.cur i{animation:none}.cur i:first-child{opacity:1}}
+  @media(prefers-reduced-motion:reduce){.world::after{animation:none}.cur i{animation:none}.cur i:first-child{opacity:1}}
 
   /* Garantía */
   .guarantee{display:grid;gap:24px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:24px;padding:30px}
@@ -468,7 +463,7 @@ e.head.appendChild(js)})(window,document,'sentinel','https://trackk.munecasdetel
       <p class="trust">🔒 Pago 100% seguro · Acceso inmediato</p>
       <img width="702" height="53" class="pay" loading="lazy" src="images/logos-pago.webp" alt="Métodos de pago: PayPal, Visa, Mastercard, Discover, American Express, Efecty, OXXO y Sencillito">
       <div class="world" role="note">
-        <div class="globe" aria-hidden="true"><div class="land"><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="#5FB36B"><path d="M8 22c8-6 20-5 24 2s-2 12 4 18-4 14-10 12-8-10-14-12S0 28 8 22z"/><path d="M30 60c6-2 12 2 12 9s-4 15-9 18-7-6-6-12-3-13 3-15z"/><path d="M52 18c10-4 24-2 30 4s2 10-6 10-10 6-16 4-12-14-8-18z"/><path d="M60 48c6-3 14 0 16 6s-2 12-8 12-12-2-12-8 0-7 4-10z"/><path d="M84 70c5-2 10 2 9 6s-6 6-9 4-4-8 0-10z"/></g></svg><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="#5FB36B"><path d="M8 22c8-6 20-5 24 2s-2 12 4 18-4 14-10 12-8-10-14-12S0 28 8 22z"/><path d="M30 60c6-2 12 2 12 9s-4 15-9 18-7-6-6-12-3-13 3-15z"/><path d="M52 18c10-4 24-2 30 4s2 10-6 10-10 6-16 4-12-14-8-18z"/><path d="M60 48c6-3 14 0 16 6s-2 12-8 12-12-2-12-8 0-7 4-10z"/><path d="M84 70c5-2 10 2 9 6s-6 6-9 4-4-8 0-10z"/></g></svg></div></div>
+        <picture class="globe" aria-hidden="true"><source srcset="images/globo-static.webp" media="(prefers-reduced-motion: reduce)"><img src="images/globo.webp" width="128" height="128" alt="" loading="lazy"></picture>
         <div class="world-t">
           <b>Disponible para todo el mundo 🌎</b>
           <span>Paga en la moneda local de tu país</span><span class="conv"><span class="cur" aria-hidden="true"><i>MXN</i><i>COP</i><i>ARS</i><i>PEN</i><i>CLP</i><i>USD</i><i>EUR</i></span> Conversión automática</span>
