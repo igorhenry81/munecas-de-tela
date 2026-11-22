@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muñeco de Nieve — Oferta especial de Navidad</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Clases y moldes para imprimir para crear tu propio muñeco de nieve navideño. Oferta especial solo para alumnas.">
+<meta name="theme-color" content="#FDFBF8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛄</text></svg>">
+<link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://checkout.hotmart.com">
+<link rel="preconnect" href="https://pay.hotmart.com">
+<style>
+  @font-face{font-family:"DM Sans";src:url(/fonts/dm-sans.woff2) format("woff2");font-weight:100 1000;font-style:normal;font-display:swap;
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:Fraunces;src:url(/fonts/fraunces.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap;
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"Fraunces Fallback";src:local("Georgia");size-adjust:94%}
+  @font-face{font-family:"DM Sans Fallback";src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("Helvetica");size-adjust:103%}
+  :root{
+    --cream:#FDFBF8; --paper:#F6EFE6; --ink:#172B2D; --muted:#55615F;
+    --green:#3F8A58; --green-d:#2F6E45; --gold:#C58A16; --line:#E7DED2; --alert:#B5553F;
+    --radius:18px; --shadow:0 10px 30px rgba(23,43,45,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font:17px/1.6 "DM Sans","DM Sans Fallback",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block}
+  h1,h2,h3{font-family:Fraunces,"Fraunces Fallback",Georgia,serif;line-height:1.15;font-weight:700;letter-spacing:-.01em}
+  h1{font-size:clamp(1.9rem,5vw,3rem)}
+  h2{font-size:clamp(1.55rem,3.6vw,2.2rem);margin-bottom:.6em}
+  h3{font-size:1.1rem}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  .narrow{max-width:720px}
+  section{padding:64px 0}
+  .center{text-align:center}
+  .eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+  .lead{font-size:1.12rem;color:var(--muted)}
+  .alt{background:var(--paper)}
+
+  /* Aviso + pasos */
+  .alertbar{background:var(--alert);color:#fff;text-align:center;font-weight:700;font-size:.95rem;padding:12px 16px;line-height:1.35}
+  .steps{max-width:420px;margin:22px auto 0;padding:0 20px;text-align:center;font-size:.85rem;color:var(--muted);font-weight:700}
+  .bar{height:8px;background:var(--line);border-radius:999px;margin-top:8px;overflow:hidden}
+  .bar i{display:block;height:100%;width:66%;background:var(--green);border-radius:999px}
+
+  /* Hero */
+  .hero{padding:36px 0 56px}
+  .hero-grid{display:grid;gap:32px;align-items:center}
+  .hero p.lead{margin:16px 0 26px}
+  .collage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .collage img{border-radius:14px;aspect-ratio:1/1;object-fit:cover;width:100%;box-shadow:var(--shadow);background:#eee}
+  @media(min-width:860px){.hero-grid{grid-template-columns:1.1fr 1fr}}
+
+  .btn{display:inline-flex;flex-direction:column;align-items:center;gap:2px;background:var(--green);color:#fff;text-decoration:none;
+    font-weight:700;font-size:1.05rem;padding:18px 32px;border-radius:999px;box-shadow:0 8px 22px rgba(63,138,88,.35);transition:transform .15s,background .15s}
+  .btn small{font-weight:500;font-size:.8rem;opacity:.9}
+  .btn:hover{background:var(--green-d);transform:translateY(-2px)}
+  @media(max-width:600px){.btn{font-size:.95rem;padding:18px 24px;white-space:nowrap;max-width:100%}}
+
+  /* Historia */
+  .story p{color:var(--muted);font-size:1.08rem;margin-bottom:14px}
+  .story p:first-child{color:var(--ink);font-weight:700}
+
+  /* Lo que recibes */
+  .items{display:grid;gap:16px;margin-top:30px}
+  .item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;gap:16px;align-items:flex-start}
+  .item .ic{flex:0 0 52px;height:52px;border-radius:14px;background:#F3E8DA;display:grid;place-items:center;font-size:1.6rem}
+  .item p{color:var(--muted);font-size:.95rem;margin-top:4px}
+  @media(min-width:700px){.items{grid-template-columns:1fr 1fr}}
+  @media(min-width:960px){.items{grid-template-columns:1fr 1fr 1fr}}
+
+  /* Por qué */
+  .checks{list-style:none;margin-top:24px;display:grid;gap:12px;text-align:left}
+  .checks li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px 14px 50px;position:relative}
+  .checks li::before{content:"✓";position:absolute;left:16px;top:13px;width:24px;height:24px;border-radius:50%;background:#E2F0E6;color:var(--green-d);
+    font-weight:700;display:grid;place-items:center;font-size:.85rem}
+
+  /* Oferta */
+  .offer{background:var(--ink);color:#fff}
+  .offer h2{color:#fff}
+  .card{background:#fff;color:var(--ink);border-radius:26px;max-width:520px;margin:28px auto 0;padding:32px 22px 26px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+  .badge{display:inline-block;background:#FFF3D6;color:#8A5C00;font-weight:700;font-size:.78rem;letter-spacing:.08em;padding:6px 12px;border-radius:999px}
+  .price{font-family:Fraunces,"Fraunces Fallback",Georgia,serif;font-weight:700;line-height:1;margin:14px 0 6px;color:var(--green)}
+  .price sup{font-size:1.2rem;vertical-align:top;position:relative;top:12px}
+  .price .big{font-size:4.4rem}
+  .price .cents{font-size:1.9rem}
+  .once{color:var(--muted);margin-bottom:18px}
+  #hotmart-sales-funnel{min-height:300px}
+  .oneclick{margin-top:14px;font-size:.88rem;color:var(--muted)}
+
+  /* Garantía */
+  .guarantee{display:grid;gap:22px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:24px;padding:28px}
+  .seal{width:116px;height:116px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;text-align:center;
+    font-family:Fraunces,"Fraunces Fallback",Georgia,serif;font-weight:700;line-height:1.05;margin:0 auto;box-shadow:0 0 0 6px #fff,0 0 0 8px var(--gold);font-size:.85rem}
+  .seal b{font-size:2.3rem;display:block}
+  @media(min-width:700px){.guarantee{grid-template-columns:140px 1fr}}
+
+  /* FAQ */
+  details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;padding:0 20px}
+  summary{cursor:pointer;font-weight:700;padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--green)}
+  details[open] summary::after{content:"–"}
+  details p{padding-bottom:18px;color:var(--muted)}
+
+  footer{padding:32px 0;text-align:center;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
+
+  /* ---- Navidad ---- */
+  :root{--xmas:#B3262E;--xmas-d:#8E1C23}
+  .alertbar{background:var(--xmas)}
+  .bar i{width:90%}
+  .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#FDFBF8 0%,#F7EFE6 100%)}
+  .snow{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+  .snow i{position:absolute;top:-20px;color:#C9DCE8;font-style:normal;font-size:14px;animation:fall linear infinite;opacity:.8}
+  @keyframes fall{to{transform:translateY(110vh) rotate(180deg)}}
+  @media(prefers-reduced-motion:reduce){.snow{display:none}}
+  .hero .wrap{position:relative}
+  .hero .eyebrow{color:var(--xmas)}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative}
+  .duo img{border-radius:16px;box-shadow:var(--shadow);aspect-ratio:4/5;object-fit:cover;width:100%}
+  .duo img:nth-child(2){transform:translateY(22px)}
+  .pains{display:grid;gap:14px;margin-top:26px;text-align:left}
+  .pain{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px 18px 64px;position:relative}
+  .pain .ic{position:absolute;left:16px;top:16px;width:36px;height:36px;border-radius:10px;background:#FBE9EA;display:grid;place-items:center;font-size:1.2rem}
+  .pain h3{font-size:1.05rem;margin-bottom:4px}
+  .pain p{color:var(--muted);font-size:.95rem}
+  @media(min-width:760px){.pains{grid-template-columns:1fr 1fr}}
+</style>
+<!-- Sentinel tracker -->
+<script>
+(function(s,e,n,t,i){s[n]=s[n]||function(){(s[n].q=s[n].q||[]).push(arguments)};
+var js=e.createElement('script');js.async=1;js.src=t+'?tid='+i;
+e.head.appendChild(js)})(window,document,'sentinel','https://trackk.munecasdetela.site/api/t/tracker.js','55fa247f-7175-4bcf-abe8-9cb4532c6794');
+</script>
+<!-- End Sentinel tracker -->
+</head>
+<body>
+<div class="alertbar">⚠️ ¡ESPERA! Tu pedido aún no está completo — no cierres esta página</div>
+<div class="steps">Paso 3 de 3 · Última oferta especial<div class="bar"><i></i></div></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="snow" aria-hidden="true"><i style="left:6%;animation-duration:9s">❄</i><i style="left:18%;animation-duration:12s;animation-delay:2s">❄</i><i style="left:33%;animation-duration:10s;animation-delay:4s;font-size:10px">❄</i><i style="left:52%;animation-duration:13s;animation-delay:1s">❄</i><i style="left:68%;animation-duration:11s;animation-delay:3s;font-size:11px">❄</i><i style="left:84%;animation-duration:9.5s;animation-delay:5s">❄</i><i style="left:94%;animation-duration:12.5s;animation-delay:6s;font-size:10px">❄</i></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">🎄 Oferta especial de Navidad</span>
+      <h1>Esta Navidad, crea con tus manos tu propio muñeco de nieve</h1>
+      <p class="lead">Clases paso a paso y moldes listos para imprimir para hacer un muñeco de nieve encantador — para decorar tu casa, regalar o vender en la temporada. Por un precio que solo verás en esta página.</p>
+      <a class="btn" href="#oferta">QUIERO MI MUÑECO DE NIEVE<small>Por solo US$ 5,90 · se agrega con 1 clic</small></a>
+    </div>
+    <div class="duo">
+      <img src="/images/nieve-1-sm.webp" srcset="/images/nieve-1-sm.webp 440w, /images/nieve-1.webp 800w" sizes="(min-width:860px) 240px, 45vw" width="800" height="1000" alt="Muñeco de nieve navideño con gorro rojo, bufanda a cuadros y suéter verde" fetchpriority="high">
+      <img src="/images/nieve-2-sm.webp" srcset="/images/nieve-2-sm.webp 440w, /images/nieve-2.webp 800w" sizes="(min-width:860px) 240px, 45vw" width="800" height="1000" alt="Muñeco de nieve navideño con gorro rojo, bufanda roja y un regalo en la mano">
+    </div>
+  </div>
+</header>
+
+<!-- DOR DE NAVIDAD -->
+<section class="alt">
+  <div class="wrap">
+    <div class="center narrow" style="margin:0 auto"><h2>Diciembre llega más rápido de lo que parece…</h2>
+      <p class="lead">Y cada año se repite lo mismo:</p></div>
+    <div class="pains">
+      <div class="pain"><div class="ic">🎁</div><h3>Regalos caros y todos iguales</h3><p>Gastas mucho en regalos de tienda que nadie recuerda. Un regalo hecho a mano tiene otro valor.</p></div>
+      <div class="pain"><div class="ic">🏠</div><h3>La casa sin ese toque especial</h3><p>Quieres una decoración navideña con alma, no lo mismo que todos compran en el supermercado.</p></div>
+      <div class="pain"><div class="ic">💰</div><h3>Ganas de un ingreso extra en las fiestas</h3><p>Diciembre es la época en que la gente más busca adornos y regalos artesanales.</p></div>
+      <div class="pain"><div class="ic">⏳</div><h3>Siempre lo dejas para último momento</h3><p>Si empiezas ahora, todavía estás a tiempo de tenerlo listo para la Navidad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUCIÓN -->
+<section>
+  <div class="wrap narrow story">
+    <p>Ya diste el primer paso aprendiendo a crear tus muñecas de tela. 💕</p>
+    <p>Ahora puedes usar lo que estás aprendiendo para crear una pieza navideña llena de encanto: un <b>muñeco de nieve</b> hecho por ti, para decorar tu casa, sorprender a alguien especial o vender en la temporada.</p>
+  </div>
+</section>
+
+<!-- LO QUE RECIBES -->
+<section class="alt">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">Todo lo que incluye</span><h2>Lo que vas a recibir</h2></div>
+    <div class="items">
+      <div class="item"><div class="ic">🎥</div><div><h3>Clases paso a paso</h3><p>Te muestran cómo crear tu muñeco de nieve, del inicio al acabado.</p></div></div>
+      <div class="item"><div class="ic">🖨️</div><div><h3>Moldes para imprimir</h3><p>Listos para imprimir, cortar y coser.</p></div></div>
+      <div class="item"><div class="ic">⚡</div><div><h3>Acceso inmediato</h3><p>Se agrega a tu compra y queda disponible junto con tu curso.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ -->
+<section>
+  <div class="wrap narrow">
+    <div class="center"><h2>Perfecto para esta Navidad</h2></div>
+    <ul class="checks">
+      <li>Un regalo hecho a mano, con mucho más significado</li>
+      <li>Decoración navideña única para tu casa</li>
+      <li>Una pieza de temporada para vender en diciembre</li>
+      <li>Moldes listos: solo imprimir, cortar y coser</li>
+    </ul>
+  </div>
+</section>
+
+<!-- OFERTA + BOTÓN DE 1 CLIC DE HOTMART -->
+<section class="offer" id="oferta">
+  <div class="wrap center">
+    <span class="eyebrow" style="color:#F3B4B8">🎄 Solo en esta página</span>
+    <h2>Agrega el muñeco de nieve a tu compra</h2>
+    <div class="card">
+      <span class="badge">PRECIO ESPECIAL DE NAVIDAD</span>
+      <div class="price"><sup>US$</sup><span class="big">5</span><span class="cents">,90</span></div>
+      <p class="once">Pago único · Acceso inmediato</p>
+
+      <!-- HOTMART - Sales Funnel Widget -->
+      <div id="hotmart-sales-funnel"></div>
+      <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+      <script>checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')</script>
+      <!-- /HOTMART -->
+
+      <p class="oneclick">🔒 Se agrega a tu compra con un solo clic — no necesitas volver a ingresar tus datos</p>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTÍA -->
+<section>
+  <div class="wrap narrow">
+    <div class="guarantee">
+      <div class="seal"><div><b>3</b>DÍAS DE<br>GARANTÍA</div></div>
+      <div>
+        <h2 style="font-size:1.55rem">Compra sin riesgo</h2>
+        <p class="lead" style="font-size:1rem">Si dentro de 3 días sientes que no es para ti, te devolvemos el 100% de tu dinero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="alt">
+  <div class="wrap narrow">
+    <div class="center"><h2>Preguntas frecuentes</h2></div>
+    <details><summary>¿Qué incluye?</summary><p>Clases paso a paso y moldes para imprimir para crear tu muñeco de nieve.</p></details>
+    <details><summary>¿Cómo recibo el acceso?</summary><p>Se agrega a tu compra con un clic y queda disponible en tu misma área de alumna, junto con el curso, apenas se confirma el pago.</p></details>
+    <details><summary>¿Tiene garantía?</summary><p>Sí. Tienes 3 días de garantía: si no te gusta, pides el reembolso y te devolvemos el 100% de tu dinero.</p></details>
+    <div class="center" style="margin-top:28px"><a class="btn" href="#oferta">QUIERO MI MUÑECO DE NIEVE<small>US$ 5,90 · se agrega con 1 clic</small></a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="y"></span> Muñecas de Tela · Todos los derechos reservados</div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
