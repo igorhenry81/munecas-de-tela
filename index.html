@@ -78,6 +78,7 @@
 
   /* ---------- Video ---------- */
   .vid-wrap{max-width:1140px;margin:0 auto 30px;padding:0 20px}
+  .vid.m{aspect-ratio:700/584}
   .vid{display:block;width:100%;height:auto;aspect-ratio:1280/584;border-radius:14px;background:#111;box-shadow:0 12px 30px rgba(0,0,0,.18)}
   /* ---------- Galerías ---------- */
   .grid{display:grid;gap:20px;padding:0 20px;max-width:1140px;margin:0 auto}
@@ -277,7 +278,7 @@ e.head.appendChild(js)})(window,document,'sentinel','https://trackk.munecasdetel
 <!-- MUÑECAS -->
 <h2 class="g-title t-acceso">Acceso de por vida a más de 40 clases en video, completas y detalladas.</h2>
 <div class="vid-wrap">
-  <video class="vid" controls playsinline muted loop preload="none" poster="images/contenido-poster.webp" width="1280" height="584" aria-label="Recorrido por el área de miembros del curso">
+  <video class="vid" controls playsinline muted loop preload="none" poster="images/contenido-poster.webp" width="1280" height="584" data-mobile-src="video/contenido-mobile.mp4" data-mobile-poster="images/contenido-poster-mobile.webp" aria-label="Recorrido por el área de miembros del curso">
     <source src="video/contenido.mp4" type="video/mp4">
   </video>
 </div>
@@ -440,13 +441,15 @@ e.head.appendChild(js)})(window,document,'sentinel','https://trackk.munecasdetel
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 
 <script>
-(function(){var v=document.querySelector('.vid');if(!v||!('IntersectionObserver' in window))return;
+(function(){var v=document.querySelector('.vid');if(!v)return;
+if(matchMedia('(max-width:759px)').matches&&v.dataset.mobileSrc){v.querySelector('source').src=v.dataset.mobileSrc;v.poster=v.dataset.mobilePoster;v.width=700;v.height=584;v.classList.add('m');v.dataset.reload=1}
+if(!('IntersectionObserver' in window))return;
 if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 var auto=false,userPaused=false;
 v.addEventListener('pause',function(){if(!auto)userPaused=true;auto=false});
 v.addEventListener('play',function(){userPaused=false});
 new IntersectionObserver(function(es){es.forEach(function(e){
-  if(e.isIntersecting){if(v.paused&&!userPaused)v.play().catch(function(){})}
+  if(e.isIntersecting){if(v.dataset.reload){delete v.dataset.reload;v.load()}if(v.paused&&!userPaused)v.play().catch(function(){})}
   else if(!v.paused){auto=true;v.pause()}
 })},{threshold:.35}).observe(v);})();
 </script>
